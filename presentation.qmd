@@ -1,0 +1,13 @@
+---
+title: "Presentation Template"
+author: "Minyu Chan"
+format: revealjs
+---
+
+## Introduction
+- My name is Minyu
+- I am 29 this year
+
+## Methods
+- my MBTI is INTJ
+- I appreciate alone time
