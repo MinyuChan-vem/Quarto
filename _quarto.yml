@@ -1,0 +1,14 @@
+project:
+  type: default
+  title: "Your Book Title"
+
+jupyter:
+  conda-env: quarto
+  kernel_name: quarto
+  display_name: "Python (Quarto)"
+  language: python
+  execute:
+    enabled: true
+    cache: true
+    timeout: 60
+  execute-timeout: 60

@@ -1,0 +1,12 @@
+{
+  "name": "quarto",
+  "language": "python",
+  "display_name": "Python (Quarto)",
+  "argv": [
+    "C:\\Users\\MinYu\\anaconda3\\envs\\quarto\\python.exe",
+    "-m",
+    "ipykernel_launcher",
+    "-f",
+    "{connection_file}"
+  ]
+}
