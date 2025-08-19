@@ -2,11 +2,20 @@
 title: "Presentation Template"
 author: "Minyu Chan"
 format: revealjs
+theme: default
 ---
 
 ## Introduction
 - My name is Minyu
 - I am 29 this year
+
+``` {.python code-line-numbers="true"}
+import matplotlib.pyplot as plt
+plt.plot([1,23,2,4])
+plt.show()
+```
+
+
 
 ## Methods
 - my MBTI is INTJ
