@@ -1,0 +1,229 @@
+---
+title: "Converted Slides"
+format: revealjs
+---
+
+# Final Review Milestone Presentation
+
+Minyu Chan 27403920
+
+Characterizing the Fasciculus Retroflexus in Developing Zebrafish using a Correlative Multimodal Volume Imaging Approach
+
+Supervisory Team: 
+A/Prof. Satoshi Ogawa
+A/Prof. Georg Ramm
+Dr. Yatinesh Kumari
+
+
+# Outline
+
+Research Question & Objectives
+Key concepts
+Current studies
+Methods
+Main Findings
+Project Timeline Gantt Chart
+Potential challenges and considerations
+
+
+# Research Question
+
+What are the effects of GPR139 modulation towards the DA and 5HT systems?
+
+
+# Big idea - Habenula
+
+Evolutionary conserved, paired nuclei cluster
+Location: Epithalamus
+Unique to vertebrates
+2 subclusters:
+Mammals / Avians: MHb & LHb
+Fish / Amphibians / Reptiles: DHb & VHb 
+Anatomical hub
+Functionality:
+Motivation
+Decision making
+Negative reward prediction
+Fear-learning + memory
+
+
+# Fasciculus Retroflexus (FR)
+
+
+# Research Question
+
+What are the effects of GPR139 modulation towards the DA and 5HT systems?
+
+How does GPR139 affect endogenous DA and 5HT levels?
+
+What are the behavioural outputs associated with DA and 5HT changes?
+
+
+# Materials & Methodology
+
+FIB-SEM:
+Milling
+Oxygen plasma ion beam (5nm slices, xxx voxel size), Hydra G4 PFIB Thermo Fisher
+Image Processing & Segmentation
+Applied CLAHE, image registered using ORS Dragonfly, generate labelled dataset for validation, train UNet Segmentation model
+Anisotropy Measurements
+Mean Length Distribution (MLD)
+
+
+# Australian Synchrotron – MCT Beamline
+
+
+# How does a synchrotron work?
+
+
+# Synchrotron MicroCT
+
+
+# 3dpf
+
+4dpf
+
+Habenula and FR regions labeled in 3dpf and 4dpf datasets. Unable to locate ROIs in 2dpf.
+
+
+# Tomogram Processing
+
+
+# FIBSEM
+
+Starting plane for FIBSEM acquisition: 180um from the nose tip.
+FIBSEM imaging conditions: isometric voxels 15x15x15nm, 4us acquisition time (approx. 3mins/slice), 3us dwell time, 30keV oxygen ion beam at 45nA current, 2keV electron scanning beam at 0.4nA current. XY resolution: 6144x4096. HFW 92.16um.
+
+
+# Correlating SR-µCT and FIB-SEM
+
+
+# Image Processing
+
+
+# Reconstructed Habenula Volume
+
+It took us 9 days of continuous FIBSEM acquisition to achieve a volume of µm3 for the right Hb.
+
+
+# Locating the FRs
+
+Tiled image of zf midbrain cross section, FR highlighted in  yellow boxes
+
+Left FR (red). If you zoom in enough, you’ll see mitochondria (green) distributed across the bundle, which are morphologically different from those outside of the FR. 
+
+Individual axons are small and morphologically uniform - circular (different from the axons in the surrounding).
+
+
+# Segmentation: Labelling
+
+Original unlabelled slice
+
+Provides the raw image as labelling reference
+
+Labelled (3-class)
+
+Labels generated based on informed knowledge: nuclei, mitochondria
+
+Label everything else as background
+
+Mask / Ground-truth label map
+
+Provides pixel-wise annotations of the original image. For each pixel in the input image, the mask tells the model what class that pixel belongs to. 
+
+In multi-class segmentation: the mask has multiple class indices (e.g., 0 = background, 1 = nuclei, 2 = mitochondria).
+
+
+# Segmentation: UNet Semantic Model Training
+
+
+# Initial segmentation results
+
+
+# Measurements
+
+After applying segmentation model…
+
+Compute tensor descriptors for morphometric analyses
+
+Mathematical robustness ✅
+
+Biological significance ✅
+
+
+# Data Cleaning and Interpretation
+
+Data-driven iterative process to reduce computational noise and ensuring biological relevance.
+
+Computational noise includes:
+Over-segmentation
+False positives
+
+
+# Challenges & Future considerations
+
+
+# Gantt Chart – Project Timeline
+
+
+# Progress Statement
+
+✅100% Complete
+
+✅60% Complete – write-up in tandem with data collection / analyses
+
+✅70% Complete – Draft under revision (Dr Ogawa)
+
+✅80% Complete – Data collection + analysis
+
+❎50% Complete – Optimization + data collection
+
+
+# What did I get out of this PhD?
+
+Building connections
+Navigating a significant project pivot
+Developed computational thinking
+Overcome fear of unknown…and mathematics
+Learning to ask for help – even when the question is ridiculous
+Curating portfolio with transferrable skills and scalable pipelines
+
+
+# Acknowledgements
+
+Ramaciotti Centre for CryoEM
+Denis Korneev, Sergey Gorelick, Rachel Templin, Jill Danne, Genevieve Buckley, Hari Venugopal, Simon Crawford, Sylvain Trepout, Katie Levick
+
+ARMI
+Jan Kaslin, Alon Douek, Sam Crossman
+
+ANSTO Australian Synchrotron (MCT Beamline)
+Andrew Stevenson, Benedicta Arhatari
+
+Monash Micro Imaging
+Stephen Firth, Oleks Chernyavsky, Alex Fulcher, Jihan Homman-Ludiye, Margaret Rzeszutek
+
+ORS Dragonfly Support Team
+
+Volume EM Slack and Community-Outreach Working Group
+
+
+# References
+
+1.	Sutherland RJ. The dorsal diencephalic conduction system: a review of the anatomy and functions of the habenular complex. Neurosci Biobehav Rev. 1982;6(1):1-13.
+2.	Fakhoury M, Rompre PP, Boye SM. Role of the dorsal diencephalic conduction system in the brain reward circuitry. Behav Brain Res. 2016;296:431-41.
+3.	Fakhoury M. The dorsal diencephalic conduction system in reward processing: Spotlight on the anatomy and functions of the habenular complex. Behav Brain Res. 2018;348:115-26.
+4.	Icha J, Weber M, Waters JC, Norden C. Phototoxicity in live fluorescence microscopy, and how to avoid it. Bioessays. 2017;39(8).
+5.	Bower AJ, Chidester B, Li J, Zhao Y, Marjanovic M, Chaney EJ, et al. A quantitative framework for the analysis of multimodal optical microscopy images. Quantitative Imaging in Medicine and Surgery. 2017;7(1):24-37.
+6.	Xu Y, Quan R, Xu W, Huang Y, Chen X, Liu F. Advances in Medical Image Segmentation: A Comprehensive Review of Traditional, Deep Learning and Hybrid Approaches. Bioengineering (Basel). 2024;11(10).
+7.	Korneev D, Templin R, Gorelick S, Chan M, Ramm G. Synchrotron-Based Micro-CT for Precise Targeting the Areas of Interest for Biological FIB-SEM.  APMC132025.
+8.	Danne JC, Templin R, Gervinskas G, Korneev D, Gorelick S, Ramm G. Preparation of Tissue for Volume Electron Microscopy using Focused Ion Beam Scanning Electron Microscopy (FIB-SEM). protocolsio. 2024.
+9.	Wilkins SW, Gureyev TE, Gao D, Pogany A, Stevenson AW. Phase-contrast imaging using polychromatic hard X-rays. Nature. 1996;384(6607):335-8.
+10.	Cloetens P, Barrett R, Baruchel J, Guigay J-P, Schlenker M. Phase objects in synchrotron radiation hard x-ray imaging. Journal of Physics D: Applied Physics. 1996;29(1):133-46.
+11.	Lyckegaard A, Johnson G, Tafforeau P. Correction of Ring Artifacts in X-ray Tomographic Images. International Journal of Tomography & Statistics. 2011;18(F11):1-9.
+12.	Pizer SM, Amburn EP, Austin JD, Cromartie R, Geselowitz A, Greer T, et al. Adaptive histogram equalization and its variations. Computer Vision, Graphics, and Image Processing. 1987;39(3):355-68.
+13.	Vincent AE, White K, Davey T, Philips J, Ogden RT, Lawless C, et al. Quantitative 3D Mapping of the Human Skeletal Muscle Mitochondrial Network. Cell Reports. 2019;26(4):996-1009.e4.
+
+
+# THANK YOU
+
