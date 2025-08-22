@@ -14,9 +14,26 @@ import matplotlib.pyplot as plt
 plt.plot([1,23,2,4])
 plt.show()
 ```
-
-
-
 ## Methods
 - my MBTI is INTJ
 - I appreciate alone time
+
+## Results
+- bla bla
+
+## Biological Significance
+- bla bla
+
+## Conclusions
+- bla 
+
+## Acknowledgements
+- Monash Ramaciotti Center for Cryo-EM
+- ANSTO Australian Synchrotron
+- Australian Regenerative Medicine Institute
+- Sainsbury Wellcome Center for Neural Circuits and Behaviour
+- Software Sustainability Institute
+- Volume Electron Microscopy Communi-Reach WG
+- Global BioImaging
+
+## References
