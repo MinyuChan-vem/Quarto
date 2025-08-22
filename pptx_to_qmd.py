@@ -10,7 +10,16 @@ def extract_text_from_slide(slide):
                 text_blocks.append(text)
     return text_blocks
 
-def pptx_to_qmd(pptx_path="", output_path="slides.qmd", title="Converted Slides"):
+def pptx_to_qmd(pptx_path="C:/Users/MinYu/pss/PSS - Minyu Chan 27403920.pptx", output_path="C:/Users/MinYu/pss/slides.qmd", title="Converted Slides"):
+    # Sanity check: pptx file exists
+    if not Path(pptx_path).is_file():
+        print(f"❌ File not found: {pptx_path}")
+        return
+
+    # Sanity check: output directory exists
+    output_dir = Path(output_path).parent
+    output_dir.mkdir(parents=True, exist_ok=True)
+
     prs = Presentation(pptx_path)
     output_lines = []
 
@@ -43,4 +52,8 @@ def pptx_to_qmd(pptx_path="", output_path="slides.qmd", title="Converted Slides"
 
 # Example usage:
 if __name__ == "__main__":
-    pptx_to_qmd("example.pptx", output_path="slides.qmd", title="My RevealJS Slides")
+        pptx_to_qmd(
+        pptx_path=r"C:\Users\MinYu\pss\PSS - Minyu Chan 27403920.pptx",
+        output_path=r"C:\Users\MinYu\pss\slides.qmd",
+        title="Converted Slides"
+    )
